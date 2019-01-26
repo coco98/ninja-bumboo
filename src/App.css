@@ -1,3 +1,112 @@
+body {
+  font-family: sans-serif;
+  font-size: 2em;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #aaa;
+}
+.start-new-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(100, 30, 30, 0.2);
+  padding-bottom: 100px;
+}
+.start-new-game input.name-input {
+  height: 2.1em;
+  font-size: 2em;
+  padding-left: 1em;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(30, 100, 30, 0.2);
+  padding-bottom: 100px;
+}
+
+.question table td {
+  padding: 10px;
+  border: 1px solid #999;
+}
+
+.flex-no-padding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(30, 100, 30, 0.2);
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.player img {
+  width: 100px;
+  border-radius: 50%;
+  border: 5px dashed red;
+}
+
+.player.big img {
+  width: 400px;
+}
+
+.player.answered img {
+  border: 5px solid green;
+}
+
+.player .timediff {
+  font-size: 0.75em;
+  font-style: italic;
+}
+
+button.big-button {
+  font-size: 2em;
+  padding: 20px;
+}
+
+.answer-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid grey;
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+}
+
+table.gamer-options td {
+  cursor: pointer;
+}
+
+table.gamer-options td:hover {
+  background: rgba(30, 100, 30, 0.3);
+}
+
+/* 8888888888888888888888888888888888888888888888 */
 .App {
   text-align: center;
 }

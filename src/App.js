@@ -1,25 +1,63 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Master from './Master';
+import Gamer from './Gamer';
 
 class App extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
+  componentDidMount() {
+    const { renewSession } = this.props.auth;
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      renewSession();
+    }
+  }
+
   render() {
+    const { isAuthenticated } = this.props.auth;
+    let isLoggedIn = false;
+    let isMaster = false;
+
+    if (isAuthenticated()) {
+      isLoggedIn = true;
+      isMaster = this.props.auth.isMaster();
+    }
+
+    if (!isLoggedIn) {
+      return (
+        <div className="flex-no-padding">
+          <button className="big-button" type="submit" onClick={this.login.bind(this)}>Login</button>
+        </div>
+      );
+    }
+
+    if (isMaster) {
+      return (
+        <div className="flex-no-padding">
+          <button className="big-button" type="submit" onClick={this.goTo.bind(this, 'master')}>Start</button>
+          <hr/>
+          <button className="big-button" type="submit" onClick={this.logout.bind(this)}>Logout</button>
+        </div>
+      );
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="flex-no-padding">
+        <button className="big-button" type="submit" onClick={this.goTo.bind(this, 'gamer')}>Start</button>
+        <hr/>
+        <button className="big-button" type="submit" onClick={this.logout.bind(this)}>Logout</button>
       </div>
     );
   }
