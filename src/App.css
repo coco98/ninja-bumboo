@@ -8,6 +8,7 @@ hr {
   border: 1px solid #aaa;
 }
 .start-new-game {
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +25,7 @@ hr {
 }
 
 .question {
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +42,7 @@ hr {
 }
 
 .flex-no-padding {
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
