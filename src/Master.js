@@ -1,6 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Master from './Master';
 import gql from "graphql-tag";
 import { Mutation, Subscription } from "react-apollo";
 import Loading from './Callback/Callback';
@@ -41,7 +39,7 @@ const StartNewGame = () => (
 
 const Player = (props) => (
   <div className={'player ' + (props.isAnswered ? 'answered ' : '') + (props.isBig ? ' big ' : '')}>
-    <img src={props.profile} />
+    <img alt="profile" src={props.profile} />
     <b>{props.username}</b>
     <br/>
     <span className="timediff">{props.timeDiff ? ('(' + props.timeDiff.toString() + 's)') : null}</span>
@@ -120,7 +118,7 @@ const LoadGame = (props) => {
   console.log('Total non-eliminated players: ' + numPlayers);
   console.log('Total answers: ' + numAnswers);
 
-  const everyoneAnswered = (numPlayers == numAnswers);
+  const everyoneAnswered = (numPlayers === numAnswers);
 
   if (waitingForAnswers && !everyoneAnswered) {
     const question = JSON.parse(JSON.stringify(props.data.questions[0].data));
@@ -140,7 +138,7 @@ const LoadGame = (props) => {
     return (
       <div className="question">
         <h1>{question.question}</h1>
-        <img src={question.media} />
+        <img alt="question media" src={question.media} />
         <hr/>
         <table>
           <tbody>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Mutation, Subscription} from 'react-apollo';
 import gql from 'graphql-tag';
 import Loading from './Callback/Callback';

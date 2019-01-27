@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Master from './Master';
-import Gamer from './Gamer';
 
 class App extends Component {
   goTo(route) {
